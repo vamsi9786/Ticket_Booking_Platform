@@ -12,6 +12,7 @@ const sendEmail=async(to,subject,text)=>{
             }
         });
 
+        console.log("Before");
         await transporter.verify();
         console.log("SMTP Connected");
         

@@ -18,7 +18,7 @@ const sendEmail=async(to,subject,text)=>{
         });
         console.log("Email sent successfully");
     } catch(err){
-        console.error("Email Failed: ",err.message);
+        console.error("Email Failed: ",err.response);
         return;
     }
 };

@@ -60,7 +60,7 @@ export default function BookingHistory() {
                     <div key={booking._id} className='eventListall' >
                         {booking.event?.type==='movie'&&<>
                             <div style={{fontSize:'1.3rem',display:'flex',justifyContent:'center',fontWeight:'bold'}}>MOVIE</div>
-                            <img src={`http://localhost:4000/uploads/avatars/${booking?.event.poster}`} style={{
+                            <img src={`${process.env.REACT_APP_API_URL}/uploads/avatars/${booking?.event.poster}`} style={{
                                 height:'200px',
                                 objectFit: 'cover',
                                 borderRadius:'12px',
@@ -75,7 +75,7 @@ export default function BookingHistory() {
                         
                         {booking.event?.type==='concert'&&<>
                             <div style={{fontSize:'1.3rem',display:'flex',justifyContent:'center',fontWeight:'bold'}}>CONCERT</div>
-                            <img src={`http://localhost:4000/uploads/avatars/${booking?.event.poster}`} style={{height:'200px',borderRadius:'12px',marginTop:'15px'}}/>
+                            <img src={`${process.env.REACT_APP_API_URL}/uploads/avatars/${booking?.event.poster}`} style={{height:'200px',borderRadius:'12px',marginTop:'15px'}}/>
                             </>}
                         
                         <h2>{booking.event?.title}</h2>

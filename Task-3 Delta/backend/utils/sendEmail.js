@@ -11,7 +11,10 @@ const sendEmail=async(to,subject,text)=>{
                 pass:process.env.EMAIL_PASS
             }
         });
-    
+
+        await transporter.verify();
+        console.log("SMTP Connected");
+        
         await transporter.sendMail({
             from:process.env.EMAIL_USER,
             to,

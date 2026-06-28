@@ -2,6 +2,8 @@ const nodemailer=require('nodemailer');
 
 const sendEmail=async(to,subject,text)=>{
     try{
+        console.log(process.env.EMAIL_USER);
+        console.log(!!process.env.EMAIL_PASS);
         const transporter=nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 465,
@@ -24,7 +26,7 @@ const sendEmail=async(to,subject,text)=>{
         });
         console.log("Email sent successfully");
     } catch(err){
-        console.error("Email Failed: ",err.response);
+        console.error("Email Failed: ",err);
         return;
     }
 };

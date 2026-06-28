@@ -72,7 +72,7 @@ export default function EventDetail() {
 
             {event ? (<div className={event.type==='train'?'':'moviediv'}>
             {event.type!=="train"&&<h2>{event.title}</h2>}
-            {event.type!=="train"&&<img src={`http://localhost:4000/uploads/avatars/${event.poster}`} style={{borderRadius:'12px'}} />}
+            {event.type!=="train"&&<img src={`${process.env.REACT_APP_API_URL}/uploads/avatars/${event.poster}`} style={{borderRadius:'12px'}} />}
             {event.type==="concert"&&<h3>Date: {event.date}</h3>}
             {event.type==="concert"&&<h3>Starts From: {event.time}</h3>}
             {event.type!=="train"&&<h3>Place: {event.place}</h3>}

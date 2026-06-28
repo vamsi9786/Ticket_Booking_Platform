@@ -65,7 +65,7 @@ export default function Summary() {
             <h1 className="head" style={{width:'300px',position:'relative',left:'615px',top:'10px',marginTop:'0px',paddingLeft:'15px'}}>Booking Summary</h1>
             
             {event.type==='movie'&& (<div className="moviediv" style={{width:'350px',position:'relative',left:'565px'}}>
-                <img src={`http://localhost:4000/uploads/avatars/${event.poster}`} style={{borderRadius:'12px'}}/>
+                <img src={`${process.env.REACT_APP_API_URL}/uploads/avatars/${event.poster}`} style={{borderRadius:'12px'}}/>
                 <h2>{event.title}</h2>
                 <p><strong>Show Date:</strong>{state.showDate}</p>
                 <p><strong>Show Time:</strong>{state.showTime}</p>
@@ -74,7 +74,7 @@ export default function Summary() {
             </div>)}
 
             {event.type==='concert'&& (<div className="concertdiv" style={{width:'350px',position:'relative',left:'565px',height:'470px'}}>
-                <img src={`http://localhost:4000/uploads/avatars/${event.poster}`} style={{borderRadius:'12px'}} />
+                <img src={`${process.env.REACT_APP_API_URL}/uploads/avatars/${event.poster}`} style={{borderRadius:'12px'}} />
                 <h2>{event.title}</h2>
                 <p style={{position:'relative',left:'-12px'}}><strong>Concert Date:</strong>{event.date}</p>
                 <p style={{position:'relative',left:'-32px'}}><strong>Concert Time:</strong>{event.time}</p>

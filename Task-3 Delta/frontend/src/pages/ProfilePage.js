@@ -78,8 +78,8 @@ export default function ProfilePage() {
             {isEditing?
                 (<div className='useredit'>
                     <form className='prof-form'>
-                    {avatarFile && <img style={{position:'relative',left:'130px'}} src={URL.createObjectURL(avatarFile)} onError={(e)=>(e.target.src=`http://localhost:4000${user.avatar}`)} alt="User Avatar" className="avatar" />}
-                    {!avatarFile && <img style={{position:'relative',left:'130px'}} src={`http://localhost:4000${user.avatar}`}  alt="User Avatar" className="avatar" />}
+                    {avatarFile && <img style={{position:'relative',left:'130px'}} src={URL.createObjectURL(avatarFile)} onError={(e)=>(e.target.src=`${process.env.REACT_APP_API_URL}${user.avatar}`)} alt="User Avatar" className="avatar" />}
+                    {!avatarFile && <img style={{position:'relative',left:'130px'}} src={`${process.env.REACT_APP_API_URL}${user.avatar}`}  alt="User Avatar" className="avatar" />}
                     
                     <br/>
                     <label style={{position:'relative',left:'20px',marginTop:'20px'}}><strong>Profile Pic</strong></label>
@@ -95,7 +95,7 @@ export default function ProfilePage() {
                 :(<div className='userprof'>
                     <form className='prof-form'>
                     <h2 style={{position:'relative',left:'80px'}}>User Information</h2>
-                    <img src={`http://localhost:4000${user.avatar}`} style={{position:'relative',left:'130px'}} onError={(e)=>(e.target.src='https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg')} alt="User Avatar" className="avatar" />
+                    <img src={`${process.env.REACT_APP_API_URL}${user.avatar}`} style={{position:'relative',left:'130px'}} onError={(e)=>(e.target.src='https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg')} alt="User Avatar" className="avatar" />
                     
                     <p style={{position:'relative',left:'100px'}}><strong>Name:</strong> {user.name}</p>
                     <p style={{position:'relative',left:'100px'}}><strong>Email:</strong> {user.email}</p>

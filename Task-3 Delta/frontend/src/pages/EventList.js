@@ -73,7 +73,7 @@ export default function EventList() {
 
                         {event.type==='concert'&&<div className={(type==='concert')?'concertdiv':'all'}>
                             <div style={{fontSize:'1.3rem',display:'flex',justifyContent:'center',fontWeight:'bold'}}>CONCERT</div>
-                            <img src={`http://localhost:4000/uploads/avatars/${event.poster}`} style={{height:'200px',marginTop:'10px',borderRadius:'12px'}}/>
+                            <img src={`${process.env.REACT_APP_API_URL}/uploads/avatars/${event.poster}`} style={{height:'200px',marginTop:'10px',borderRadius:'12px'}}/>
                             <h3><strong>{event.title}</strong></h3>
                             <div className='concertpricediv'>
                                 <h4><strong>Date:</strong>{event.date}</h4>
@@ -88,7 +88,7 @@ export default function EventList() {
 
                         {event.type==='movie'&&<div className={(type==='movie')?'moviediv':'all'}>
                             <div style={{fontSize:'1.3rem',display:'flex',justifyContent:'center',fontWeight:'bold'}}>MOVIE</div>
-                            <img src={`http://localhost:4000/uploads/avatars/${event.poster}`} style={{
+                            <img src={`${process.env.REACT_APP_API_URL}/uploads/avatars/${event.poster}`} style={{
                                 height:'300px',
                                 objectFit: 'cover',
                                 marginTop:'10px',borderRadius:'12px'

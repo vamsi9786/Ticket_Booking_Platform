@@ -1,7 +1,7 @@
 const nodemailer=require('nodemailer');
 
 const sendEmail=async(to,subject,text)=>{
-    try(){
+    try{
         const transporter=nodemailer.createTransport({
             service:'Gmail',
             auth:{

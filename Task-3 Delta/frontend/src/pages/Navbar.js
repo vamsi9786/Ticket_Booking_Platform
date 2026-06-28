@@ -52,7 +52,7 @@ const Navbar = () => {
                                 </li>
                                 <Link to='/profile' style={{position:'relative',left:'-30px'}}>
                                 <img
-                                    src={`http://localhost:4000${user.avatar}`} 
+                                    src={`${process.env.REACT_APP_API_URL}${user.avatar}`} 
                                     onError={(e)=>(e.target.src='https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg')}
                                     style={{height:'50px',width:'50px',borderRadius:'50%',border:'1px solid rgba(0,0,0,0.175)'}}
                                 /></Link>

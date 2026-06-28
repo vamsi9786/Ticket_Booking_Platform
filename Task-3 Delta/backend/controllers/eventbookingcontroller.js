@@ -66,7 +66,9 @@ exports.createBooking = async (req, res) => {
         await vendor.save();
         await event.save();
 
+        console.log("before mail");
         await sendEmail(user.email,'Your Booking',`Your Booking \n ${event.title} \n Quantity:${booking.quantity} \n Total Price:${booking.totalPrice}\n `,'Valid till Event ends...');
+        console.log("after mail");
         
         res.status(201).json({ message: 'Booking created successfully', booking,user });
     } catch (error) {

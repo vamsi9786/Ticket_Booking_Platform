@@ -14,8 +14,8 @@ const adminRoutes = require('./routes/adminRoutes');
 dotenv.config();
 
 const app = express();
-//app.use(cors({origin: 'http://localhost:3000', credentials: true}));
-app.use(cors());
+app.use(cors({origin: [ 'http://localhost:3000', 'https://ticket-booking-platform-frontend-jet.vercel.app'], credentials: true}));
+//app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads/avatars', express.static('uploads/avatars'));
